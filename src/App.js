@@ -9,7 +9,7 @@ import Colaborador from "./components/Colaborador";
 import Footer from "./components/Footer";
 
 function App() {
-    const [mostrarFormulario, actualizarMostrar] = useState(false);
+    const [mostrarFormulario, actualizarMostrar] = useState(true);
     const [colaboradores, actualizarColaboradores] = useState([
         {
             id: uuidv4(),
