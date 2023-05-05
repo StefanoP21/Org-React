@@ -7,7 +7,7 @@ const Equipo = (props) => {
     const { colorPrimario, colorSecundario, titulo, id } = props.datos;
     // const colorPrimario = props.datos.colorPrimario;
 
-    const { colaboradores, eliminarColaborador, actualizarColor } = props;
+    const { colaboradores, eliminarColaborador, actualizarColor, like } = props;
 
     const obj = {
         backgroundColor: hexToRgba(colorPrimario, 0.4), // colorSecundario
@@ -36,6 +36,7 @@ const Equipo = (props) => {
                             key={index}
                             colorPrimario={colorPrimario}
                             eliminarColaborador={eliminarColaborador}
+                            like={like}
                         />
                     ))}
                 </div>

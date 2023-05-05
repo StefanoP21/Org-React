@@ -17,6 +17,7 @@ function App() {
             foto: "https://github.com/harlandlohora.png",
             nombre: "Harland Lohora",
             puesto: "Instructor",
+            favorito: true,
         },
         {
             id: uuidv4(),
@@ -24,6 +25,7 @@ function App() {
             foto: "https://github.com/genesysaluralatam.png",
             nombre: "Genesys Rondón",
             puesto: "Desarrolladora de software e instructora",
+            favorito: false,
         },
         {
             id: uuidv4(),
@@ -31,6 +33,7 @@ function App() {
             foto: "https://github.com/JeanmarieAluraLatam.png",
             nombre: "Jeanmarie Quijada",
             puesto: "Instructora en Alura Latam",
+            favorito: false,
         },
         {
             id: uuidv4(),
@@ -38,6 +41,7 @@ function App() {
             foto: "https://github.com/christianpva.png",
             nombre: "Christian Velasco",
             puesto: "Head de Alura e Instructor",
+            favorito: false,
         },
         {
             id: uuidv4(),
@@ -45,6 +49,7 @@ function App() {
             foto: "https://github.com/JoseDarioGonzalezCha.png",
             nombre: "Jose Gonzalez",
             puesto: "Dev FullStack",
+            favorito: false,
         },
     ]);
 
@@ -124,10 +129,8 @@ function App() {
             if (equipo.id === id) {
                 equipo.colorPrimario = color;
             }
-
             return equipo;
         });
-
         actualizarEquipos(equiposActualizados);
     };
 
@@ -135,6 +138,19 @@ function App() {
     const crearEquipo = (nuevoEquipo) => {
         console.log(nuevoEquipo);
         actualizarEquipos([...equipos, { ...nuevoEquipo, id: uuidv4() }]);
+    };
+
+    // Favoritos
+    const like = (id) => {
+        console.log("like", id);
+        const colaboradoresActualizados = colaboradores.map((colaborador) => {
+            if (colaborador.id === id) {
+                colaborador.favorito = !colaborador.favorito;
+            }
+            return colaborador;
+        });
+
+        actualizarColaboradores(colaboradoresActualizados);
     };
 
     return (
@@ -167,6 +183,7 @@ function App() {
                     )}
                     eliminarColaborador={eliminarColaborador}
                     actualizarColor={actualizarColor}
+                    like={like}
                 />
             ))}
 

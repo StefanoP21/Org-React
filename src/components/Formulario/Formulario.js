@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Formulario.css";
-import CampoTexto from "../CampoTexto";
+import Campo from "../Campo";
 import ListaOpciones from "../ListaOpciones/";
 import Boton from "../Boton";
 
@@ -36,21 +36,21 @@ const Formulario = (props) => {
         <section className="formulario">
             <form onSubmit={manejarEnvio}>
                 <h2>Completa el formulario para crear el colaborador</h2>
-                <CampoTexto
+                <Campo
                     titulo="Nombre"
                     placeholder="Ingresar nombre"
                     required={true}
                     valor={nombre}
                     actualizarValor={actualizarNombre}
                 />
-                <CampoTexto
+                <Campo
                     titulo="Puesto"
                     placeholder="Ingresar puesto"
                     required={true}
                     valor={puesto}
                     actualizarValor={actualizarPuesto}
                 />
-                <CampoTexto
+                <Campo
                     titulo="Foto"
                     placeholder="Ingresar enlace de foto"
                     required
@@ -67,19 +67,20 @@ const Formulario = (props) => {
             </form>
             <form onSubmit={manejarNuevoEquipo}>
                 <h2>Completa el formulario para crear el equipo</h2>
-                <CampoTexto
+                <Campo
                     titulo="Título"
                     placeholder="Ingresar título"
                     required={true}
                     valor={titulo}
                     actualizarValor={actualizarTitulo}
                 />
-                <CampoTexto
+                <Campo
                     titulo="Color"
                     placeholder="Ingresar el color en Hex"
                     required={true}
                     valor={color}
                     actualizarValor={actualizarColor}
+                    type="color"
                 />
                 <Boton>Registar equipo</Boton>
             </form>

@@ -1,9 +1,9 @@
-.campo-texto {
+.campo {
     margin: 24px 0;
     font-family: 'Montserrat', sans-serif;
 }
 
-.campo-texto label {
+.campo label {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 600;
@@ -11,7 +11,7 @@
     margin-bottom: 8px;
 }
 
-.campo-texto input {
+.campo input {
     width: 100%;
     background-color: #FFF;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
@@ -23,7 +23,12 @@
     box-sizing: border-box;
 }
 
-.campo-texto input::placeholder {
+.campo input::placeholder {
     color: #A4A4A4;
     font-family: 'Montserrat', sans-serif;
+}
+
+.campo-color input {
+    height: 80px;
+    padding: 20px 20px;
 }
